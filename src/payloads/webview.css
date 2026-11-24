@@ -1,0 +1,37 @@
+/* rtl-patch:start */
+/* rtl-patch v0.1.0 — AI Extension Webview RTL (Claude Code, Cline, Roo Code, Kilo Code, Continue, Gemini) */
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+td,
+th,
+textarea,
+input[type="text"],
+[contenteditable="true"] {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+pre,
+code,
+pre *,
+code *,
+.hljs,
+.shiki,
+[class*="codeBlock"],
+[class*="code-block"],
+[class*="diff"],
+[class*="Diff"],
+[class*="terminal"],
+[class*="Terminal"] {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left !important;
+}
+/* rtl-patch:end */

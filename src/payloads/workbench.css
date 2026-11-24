@@ -1,0 +1,102 @@
+/* rtl-patch v0.1.0 — Workbench RTL styles for VS Code, Copilot Chat & Cursor */
+
+/* Optional custom RTL font variable (can be overridden by --rtl-font) */
+:root {
+  --rtl-patch-font: inherit;
+}
+
+/* ============================================================================
+   1. VS Code Copilot Chat & Interactive Session
+   ============================================================================ */
+.interactive-session .rendered-markdown,
+.interactive-session .rendered-markdown p,
+.interactive-session .rendered-markdown li,
+.interactive-session .rendered-markdown h1,
+.interactive-session .rendered-markdown h2,
+.interactive-session .rendered-markdown h3,
+.interactive-session .rendered-markdown h4,
+.interactive-session .rendered-markdown h5,
+.interactive-session .rendered-markdown h6,
+.interactive-session .rendered-markdown blockquote,
+.interactive-session .rendered-markdown td,
+.interactive-session .rendered-markdown th,
+.interactive-item-container .value,
+.chat-markdown-part,
+.chat-markdown-part p,
+.chat-markdown-part li,
+.chat-response .rendered-markdown {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+/* ============================================================================
+   2. Cursor AI Chat & Composer
+   ============================================================================ */
+.anysphere-markdown-container-root,
+.anysphere-markdown-container-root p,
+.anysphere-markdown-container-root li,
+.anysphere-markdown-container-root h1,
+.anysphere-markdown-container-root h2,
+.anysphere-markdown-container-root h3,
+.anysphere-markdown-container-root h4,
+.anysphere-markdown-container-root blockquote,
+.composer-human-message,
+.composer-message,
+.composer-message p,
+.composer-message li,
+.aislash-editor-input,
+.aislash-editor-input p,
+.markdown-root,
+.markdown-root p,
+.markdown-root li {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+/* Elements explicitly tagged by rtl-patch.js */
+[data-rtl-patch="rtl"] {
+  direction: rtl !important;
+  unicode-bidi: plaintext !important;
+  text-align: right !important;
+  font-family: var(--rtl-patch-font);
+}
+
+[data-rtl-patch="auto"] {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+[data-rtl-patch="rtl"] ul,
+[data-rtl-patch="rtl"] ol {
+  padding-inline-start: 1.5em;
+  padding-inline-end: 0;
+}
+
+[data-rtl-patch="rtl"] blockquote {
+  border-inline-start: 3px solid var(--vscode-textBlockQuote-border, #666);
+  border-inline-end: none;
+  padding-inline-start: 12px;
+  padding-inline-end: 0;
+}
+
+/* ============================================================================
+   3. Strict LTR Protection (Code blocks, inline code, diffs, paths, terminals)
+   ============================================================================ */
+.interactive-session pre,
+.interactive-session code,
+.interactive-session .interactive-result-code-block,
+.interactive-session .monaco-editor,
+.anysphere-markdown-container-root pre,
+.anysphere-markdown-container-root code,
+.composer-message pre,
+.composer-message code,
+.rendered-markdown pre,
+.rendered-markdown code,
+[data-rtl-patch="ltr"],
+.monaco-diff-editor,
+.terminal-outer-container,
+.xterm {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left !important;
+}

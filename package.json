@@ -1,0 +1,46 @@
+{
+  "name": "rtl-patch",
+  "version": "0.1.0",
+  "description": "Cross-platform global RTL (Persian/Arabic/Hebrew) patcher for AI coding agents (Cursor, VS Code / Copilot Chat / Cline / Claude Code ext, OpenCode)",
+  "type": "module",
+  "bin": {
+    "rtl-patch": "./dist/src/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.mjs",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "start": "node dist/src/cli.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "rtl",
+    "persian",
+    "arabic",
+    "hebrew",
+    "bidi",
+    "cursor",
+    "vscode",
+    "copilot",
+    "opencode",
+    "ai-coding-agents"
+  ],
+  "license": "MIT",
+  "homepage": "https://hamidrezaashkiyan.github.io/rtl-patch/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HamidRezaAshkiyan/rtl-patch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HamidRezaAshkiyan/rtl-patch/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
